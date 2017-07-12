@@ -1,0 +1,30 @@
+doctype html
+
+html
+
+  head
+    title deli
+    meta charset='utf-8'
+
+    link rel='stylesheet' href='sheets/reset.css' type='text/css'
+    link rel='stylesheet' href='sheets/deli.css' type='text/css'
+
+    link rel='icon' type='image/png' sizes='30x30' href='/images/deli.png'
+
+  body
+
+    h1
+      img src='images/deli.png'
+      | deli
+    h2 new bookmark
+
+    form action='new' method='post'
+      .inputs
+        input type='text' name='time' value='#{Time.now.to_s}'
+        input type='text' name='link' value='#{params[:href]}'
+        textarea name='description'
+          | #{params[:description]}
+      .buttons
+        input type='submit' name='action' value='Cancel'
+        input type='submit' name='action' value='Submit'
+

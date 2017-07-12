@@ -16,5 +16,9 @@ module Deli::Storage
 
     []
   end
+
+  def self.save(params)
+  rescue => err
+  end
 end
 
