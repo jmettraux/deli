@@ -1,0 +1,30 @@
+
+body {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  margin: 1em 1em;
+}
+
+h1 {
+  font-size: 140%;
+  font-weight: bold;
+  margin: 1em 0;
+}
+h1 img {
+  margin-right: 0.35em;
+  border: 1px solid #f9f9f9;
+}
+h2 {
+  font-size: 120%;
+  margin: 1em 0;
+}
+
+.bookmark {
+  margin: 0.7em 0;
+}
+.bookmark > * {
+  display: inline-block;
+}
+.bookmark .description {
+  margin-left: 1em;
+}
+

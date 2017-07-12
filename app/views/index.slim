@@ -7,10 +7,13 @@ html
     meta charset='utf-8'
 
     link rel='stylesheet' href='sheets/reset.css' type='text/css'
+    link rel='stylesheet' href='sheets/deli.css' type='text/css'
 
   body
 
-    h1 deli
+    h1
+      img src='images/deli.png'
+      | deli
     h2 my bookmarks
 
     - Deli::Storage.bookmarks.each do |m|
