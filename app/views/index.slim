@@ -1,9 +1,20 @@
 doctype html
+
 html
+
   head
     title deli
     meta charset='utf-8'
+
   body
-    h1 Deli
-    p blah blah blah
-    p Time is now #{Time.now}
+
+    h1 deli
+    h2 my bookmarks
+
+    - Deli::Storage.bookmarks.each do |m|
+      .bookmark
+        .date #{m[0]}
+        .link
+          a href="#{m[1]}" #{m[1]}
+        .description #{m[2]}
+

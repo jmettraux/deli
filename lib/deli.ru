@@ -25,8 +25,14 @@ configure do
 end
 
 $: << 'lib'
+
+module Deli; end
+
+require 'deli/storage'
+
 require 'deli/helpers'
 require 'deli/endpoints'
+
 
 run Sinatra::Application
 
