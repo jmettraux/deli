@@ -1,9 +1,6 @@
 
 require 'sinatra'
-#require 'slim'
-
-$: << 'lib'
-require 'deli'
+require 'slim'
 
 
 configure do
@@ -17,7 +14,7 @@ configure do
 
   set :views, 'app/views'
 
-  #set :slim, pretty: true, indent: ''
+  set :slim, pretty: true#, indent: ''
 
   set :protection, :except => [ :json_csrf ]
 
@@ -26,6 +23,10 @@ configure do
     key: "deli_#{Time.now.to_f}",
     same_site: :strict
 end
+
+$: << 'lib'
+require 'deli/helpers'
+require 'deli/endpoints'
 
 run Sinatra::Application
 
