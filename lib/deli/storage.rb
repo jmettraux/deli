@@ -6,6 +6,7 @@ module Deli::Storage
   def self.bookmarks
 
     File.readlines('var/links.txt')
+      .reverse
       .collect { |line|
         m = LINE_REGEX.match(line.strip)
         m ? m.to_a[1..-1] : nil }
