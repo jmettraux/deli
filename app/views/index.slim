@@ -13,6 +13,11 @@ html
 
   body
 
+    - if env['_flash_error']
+      .flash.error #{env['_flash_error']}
+    - if env['_flash_success']
+      .flash.success #{env['_flash_success']}
+
     h1
       img src='images/deli.png'
       | deli

@@ -40,7 +40,7 @@ form .inputs input {
 }
 form .inputs textarea {
   display: block;
-  width: 49.9%;
+  width: 49.945%;
   height: 4em;
 }
 form .buttons {
@@ -49,5 +49,21 @@ form .buttons {
 form .buttons input {
   font-size: 110%;
   margin-right: 0.4em;
+}
+
+.flash {
+  line-height: 2em;
+  padding: 0.35em;
+  vertical-align: middle;
+}
+.flash.error {
+  background-color: rgba(255, 0, 0, 0.49);
+  color: white;
+  border: 1px solid red;
+}
+.flash.success {
+  background-color: lightgreen;
+  color: green;
+  border: 1px solid green;
 }
 
