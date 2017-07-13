@@ -11,8 +11,17 @@ end
 
 post '/new' do
 
-  Deli::Storage.save(env, params) if params[:action] == 'Submit'
+  if params[:action] == 'Submit'
 
-  slim :index
+    if Deli::Storage.save(session, params)
+      redirect '/'
+    else
+      slim :new
+    end
+
+  else
+
+    redirect '/'
+  end
 end
 

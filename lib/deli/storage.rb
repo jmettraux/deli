@@ -20,7 +20,7 @@ module Deli::Storage
     []
   end
 
-  def self.save(env, params)
+  def self.save(session, params)
 
     t = Time.parse(params[:time])
 
@@ -33,11 +33,15 @@ module Deli::Storage
       f.puts([ t.to_s, l, d ].join(' '))
     end
 
-    env['_flash_success'] = 'successfully saved link'
+    session['_flash_success'] = 'successfully saved link'
+
+    true
 
   rescue => err
 
-    env['_flash_error'] = err.to_s
+    session['_flash_error'] = err.to_s
+
+    false
   end
 end
 
