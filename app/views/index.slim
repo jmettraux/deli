@@ -31,5 +31,10 @@ html
         .description #{m[2]}
 
     .footer
-      a href='/new' New link
+      .new
+        a href='/new' New link
+      .bookmarklet
+        a href='javascript:window.location.href="http://localhost:7080/new?href=" + encodeURIComponent(window.location.href) + "&description=" + encodeURIComponent(document.title);'
+          img.logo src='images/deli.png'
+          | -&gt; deli
 

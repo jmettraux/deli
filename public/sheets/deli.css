@@ -42,7 +42,24 @@ h2 {
 }
 
 .footer {
-  margin-top: 1em;
+  margin-top: 2.1em;
+  border-top: 1px solid #eeeeee;
+  padding-top: 0.35em;
+  position: relative;
+}
+.footer > * {
+  display: inline-block;
+}
+.footer .bookmarklet {
+  position: absolute;
+  right: 0;
+}
+.footer .bookmarklet .logo {
+  width: 14px;
+  margin-right: 3px;
+}
+.footer .bookmarklet a {
+  text-decoration: none;
 }
 
 form .inputs input {
