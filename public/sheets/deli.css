@@ -13,6 +13,7 @@ h1 img {
   margin-right: 0.35em;
   border: 1px solid #f9f9f9;
 }
+
 h2 {
   font-size: 120%;
   margin: 1em 0;
@@ -23,9 +24,21 @@ h2 {
 }
 .bookmark > * {
   display: inline-block;
+  line-height: 1.4em;
+}
+.bookmark .logo {
+  margin-left: 3px;
+  width: 14px;
+}
+.bookmark .time {
+  margin-left: 21px;
+  opacity: 0.4;
 }
 .bookmark .description {
   margin-left: 1em;
+}
+.bookmark:nth-child(odd) {
+  background-color: #eeeeee;
 }
 
 .footer {
