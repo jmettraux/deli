@@ -21,7 +21,7 @@ html
       | deli
     h2 new bookmark
 
-    form action='new' method='post'
+    form action='new' method='post' enctype="multipart/form-data"
       .inputs
         input type='text' name='time' value='#{Time.now.to_s}'
         input type='text' name='link' value='#{params[:href]}'
