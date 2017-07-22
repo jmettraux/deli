@@ -13,6 +13,8 @@ post '/new' do
 
   if params[:action] == 'Submit'
 
+    halt 403 unless params[:secret] == File.read('var/.secret').strip
+
     if Deli::Storage.save(session, params)
       redirect '/'
     else

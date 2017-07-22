@@ -27,6 +27,7 @@ html
         input type='text' name='link' value='#{params[:href]}'
         textarea name='description'
           | #{params[:description]}
+        input type='hidden' name='secret' value='#{params[:secret]}'
       .buttons
         input type='submit' name='action' value='Cancel'
         input type='submit' name='action' value='Submit'
