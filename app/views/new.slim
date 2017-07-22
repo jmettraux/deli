@@ -27,8 +27,26 @@ html
         input type='text' name='link' value='#{params[:href]}'
         textarea name='description'
           | #{params[:description]}
-        input type='hidden' name='secret' value='#{params[:secret]}'
+        input type='hidden' name='secret' value='' placeholder='set me'
       .buttons
         input type='submit' name='action' value='Cancel'
         input type='submit' name='action' value='Submit'
+
+    javascript:
+
+      var whenReady = function() {
+
+        var es = document.querySelector("input[name='secret']");
+        var s = window.localStorage['secret'];
+
+        if (s) { es.value = s; return; }
+
+        es.setAttribute('type', 'text');
+        var ss = function() { window.localStorage['secret'] = es.value; };
+        es.addEventListener('change', ss);
+        es.addEventListener('keyup', ss);
+      };
+
+      if (document.readyState != 'loading') whenReady();
+      else document.addEventListener('DOMContentLoaded', whenReady);
 
