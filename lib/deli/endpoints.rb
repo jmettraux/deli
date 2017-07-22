@@ -1,6 +1,7 @@
 
 get '/' do
 
+  etag Deli::Storage.etag
   slim :index
 end
 

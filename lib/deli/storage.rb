@@ -23,6 +23,11 @@ module Deli::Storage
     []
   end
 
+  def self.etag
+
+    File.mtime(PATH).to_i.to_s
+  end
+
   def self.save(session, params)
 
     t = Time.parse(params[:time])
