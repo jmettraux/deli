@@ -8,7 +8,7 @@ module Deli::Storage
 
   def self.bookmarks
 
-    File.readlines(PATH)
+    File.readlines(PATH, :encoding => 'UTF-8')
       .reverse
       .collect { |line|
         m = LINE_REGEX.match(line.strip)
@@ -16,6 +16,9 @@ module Deli::Storage
       .compact
 
   rescue => err
+
+    p err
+    puts err.backtrace
 
     []
   end
@@ -29,7 +32,7 @@ module Deli::Storage
 
     d = params[:description].strip
 
-    File.open(PATH, 'ab') do |f|
+    File.open(PATH, 'ab:UTF-8') do |f|
       f.puts([ t.to_s, l, d ].join(' '))
     end
 
