@@ -1,7 +1,7 @@
 
 get '/' do
 
-  etag Deli::Storage.etag
+  last_modified Deli::Storage.mtime
   slim :index
 end
 

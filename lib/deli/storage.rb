@@ -23,9 +23,9 @@ module Deli::Storage
     []
   end
 
-  def self.etag
+  def self.mtime
 
-    File.mtime(PATH).to_i.to_s
+    File.mtime(PATH)
   end
 
   def self.save(session, params)
