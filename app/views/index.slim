@@ -16,6 +16,11 @@ html
     - if session['_flash_success']
       .flash.success #{session.delete('_flash_success')}
 
+    .bookmarklet
+      a href=''
+        img.logo src='images/deli.png'
+        | -&gt; deli
+
     h1
       a href='/'
         img src='images/deli.png'
@@ -30,19 +35,11 @@ html
         .time #{m[0]}
         .description #{m[2]}
 
-    .footer
-      .new style="opacity: 0;"
-        a href='/new' New link
-      .bookmarklet
-        a href=''
-          img.logo src='images/deli.png'
-          | -&gt; deli
-
     javascript:
 
       var whenReady = function() {
 
-        document.querySelector('.footer .bookmarklet a').href =
+        document.querySelector('.bookmarklet a').href =
           "javascript:window.location.href='" +
           window.location.href + "new" +
           "?href=' + encodeURIComponent(window.location.href) + " +
