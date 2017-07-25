@@ -1,7 +1,7 @@
 
 get '/' do
 
-  last_modified Deli::Storage.mtime
+  last_modified(Deli::Storage.mtime) unless session['_flash_success']
   slim :index
 end
 
