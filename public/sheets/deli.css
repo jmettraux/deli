@@ -5,13 +5,19 @@ body {
 }
 
 h1 {
-  font-size: 140%;
+  font-size: 280%;
   font-weight: bold;
   margin: 1em 0;
 }
 h1 img {
   margin-right: 0.35em;
   border: 1px solid #f9f9f9;
+}
+h1 .count {
+  font-size: 35%;
+  font-weight: normal;
+  display: inline-block;
+  margin-left: 1em;
 }
 
 h2 {
@@ -47,7 +53,7 @@ h2 {
 }
 .bookmarklet .logo {
   width: 14px;
-  margin-right: 3px;
+  margin-right: 7px;
 }
 .bookmarklet a {
   text-decoration: none;

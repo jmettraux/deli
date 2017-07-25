@@ -13,18 +13,20 @@ html
 
   body
 
-    - if session['_flash_success']
-      .flash.success #{session.delete('_flash_success')}
-
     .bookmarklet
       a href=''
         img.logo src='images/deli.png'
-        | -&gt; deli
+        | &gt;deli
+
+    - if session['_flash_success']
+      .flash.success #{session.delete('_flash_success')}
 
     h1
       a href='/'
         img src='images/deli.png'
       | deli
+      .count
+        | #{Deli::Storage.bookmark_count} lines
 
     - Deli::Storage.bookmarks.each do |m|
       .bookmark

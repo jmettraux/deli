@@ -23,6 +23,15 @@ module Deli::Storage
     []
   end
 
+  def self.bookmark_count
+
+    File.readlines(PATH, :encoding => 'UTF-8').size
+
+  rescue
+
+    -1
+  end
+
   def self.mtime
 
     File.mtime(PATH)
