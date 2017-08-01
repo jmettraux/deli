@@ -24,6 +24,7 @@ html
     form action='new' method='post' enctype="multipart/form-data"
       .inputs
         input type='text' name='time' value='#{Time.now.to_s}'
+        input type='text' name='olink' value='#{params[:ohref]}' disabled='disabled'
         input type='text' name='link' value='#{params[:href]}'
         textarea name='description'
           | #{params[:description]}

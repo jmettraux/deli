@@ -7,6 +7,9 @@ end
 
 get '/new' do
 
+  params[:ohref] = params[:href]
+  params[:href] = Deli.sanitize(params[:href])
+
   slim :new
 end
 
